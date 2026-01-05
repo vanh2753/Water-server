@@ -72,10 +72,13 @@ const login = async (req, res, next) => {
 
         res.cookie('refresh_token', refresh_token, {
             httpOnly: true,
-            secure: true,         // bắt buộc khi sameSite = none
-            sameSite: 'none',     // bắt buộc khi FE và BE khác domain
-            maxAge: 7 * 24 * 60 * 60 * 1000,
+            secure: true,
+            sameSite: 'none',
+            partitioned: true,
+            path: '/',
+            maxAge: 7 * 24 * 60 * 60 * 1000
         });
+
 
         // Không trả về mật khẩu
         const userData = {
