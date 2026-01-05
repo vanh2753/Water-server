@@ -73,9 +73,9 @@ const login = async (req, res, next) => {
         res.cookie('refresh_token', refresh_token, {
             httpOnly: true,
             secure: true,
-            sameSite: 'none',
-            partitioned: true,
-            path: '/',
+            sameSite: 'lax',
+            //domain: '.bacthanglong.ecabinet.vn',
+            //path: '/',
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
