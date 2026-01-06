@@ -72,10 +72,10 @@ const login = async (req, res, next) => {
 
         res.cookie('refresh_token', refresh_token, {
             httpOnly: true,
-            secure: true,
-            sameSite: 'lax',
-            //domain: '.bacthanglong.ecabinet.vn',
-            //path: '/',
+            secure: false,  //  true → false (vì dùng HTTP)
+            sameSite: 'lax',  //  'none' → 'lax' (vì cùng domain)
+            domain: '.ecabinet.vn',  //THÊM: để share cookie giữa subdomain
+            path: '/',
             maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
