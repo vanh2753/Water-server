@@ -76,7 +76,7 @@ const login = async (req, res, next) => {
             sameSite: 'lax',  //  'none' → 'lax' (vì cùng domain)
             domain: '.ecabinet.vn',  //THÊM: để share cookie giữa subdomain
             path: '/',
-            maxAge: 60 * 1000
+            maxAge: 7 * 24 * 60 * 60 * 1000
         });
 
 
